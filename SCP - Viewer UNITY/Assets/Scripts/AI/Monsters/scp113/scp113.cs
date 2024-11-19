@@ -47,7 +47,7 @@ public class scp113 : MonoBehaviour, IPassportData,ISCPSkillRequest
         if (target is null || ReloadTimer > 0) return;
         Man dclass = target.GetComponent(nameof(Man)) as Man;
 
-        rigbod.velocity = (target.transform.position+new Vector3(0,2,0) - transform.position)*2.4f; //move towards target
+        rigbod.linearVelocity = (target.transform.position+new Vector3(0,2,0) - transform.position)*2.4f; //move towards target
 
         if (Vector3.Distance(target.transform.position, transform.position) < 5f){
             aSource.Play();
@@ -56,7 +56,7 @@ public class scp113 : MonoBehaviour, IPassportData,ISCPSkillRequest
             dclass.DClassConfigs.SetStan(128);
             dclass.DClassConfigs.SetDamage(100,true);
         }
-    } //Если рядом человек, присоединяется к нему и пытается поменять пол. + перезарядка камня. + станит человека
+    } //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ. + пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ. + пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private void ChangeGender   (in GameObject target){
 
         Man man = target.GetComponent<Man>();
@@ -70,14 +70,14 @@ public class scp113 : MonoBehaviour, IPassportData,ISCPSkillRequest
             man.DClassConfigs.components.skinnedMeshRenderer.sharedMesh = man.genderMeshes.male;
         }
 
-    } //Меняет пол человека
+    } //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     public  void SkillsSet      ()
     {
         skills[0].isUsedSkill += () => {
-            rigbod.velocity = rigbod.velocity + new Vector3(0, 15, 0);
+            rigbod.linearVelocity = rigbod.linearVelocity + new Vector3(0, 15, 0);
         };
         skills[1].isUsedSkill += () => {
-            rigbod.velocity = rigbod.velocity + new Vector3(0, 25, 0);
+            rigbod.linearVelocity = rigbod.linearVelocity + new Vector3(0, 25, 0);
         };
         skills[2].isUsedSkill += () => {
             skillParticles.Emit(118);

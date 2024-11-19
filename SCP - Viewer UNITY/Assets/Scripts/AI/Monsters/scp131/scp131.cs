@@ -88,7 +88,7 @@ public class scp131 : MonoBehaviour, IAliveForm, IPassportData, ISCPSkillRequest
             GetComponent<NavAgentGroundCheck>().DisableNavmesh();
             GetComponent<NavMeshAgent>().enabled = false;
             Rigidbody rigbody = GetComponent<Rigidbody>();
-            rigbody.velocity = rigbody.velocity + new Vector3(0, 15, 0) + transform.forward * 15;
+            rigbody.linearVelocity = rigbody.linearVelocity + new Vector3(0, 15, 0) + transform.forward * 15;
         };
     }
 }

@@ -1,5 +1,5 @@
-// Camera v2. 10.04.2022 - Update: Теперь обработка нажатий работает корректно.
-// Camera v2. 08.06.2023 - Update: Добавлен _shakeValue.
+// Camera v2. 10.04.2022 - Update: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
+// Camera v2. 08.06.2023 - Update: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ _shakeValue.
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -23,7 +23,7 @@ public sealed class CamMove_v2 : MonoBehaviour
     public static CamMove_v2 instance;
 
     /// <summary>
-    /// ГРАНИЦЫ КАМЕРЫ. НЕОБХОДИМО, ЧТОБЫ КАМЕРА НЕ БЛУЖДАЛА БЕСКОНЕЧНО
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     public float        minXdist, maxXdist, minYdist, maxYdist; 
 
@@ -52,8 +52,8 @@ public sealed class CamMove_v2 : MonoBehaviour
     private int         _tempTouchsCount;
     private Camera      _cameraV2;
     private Vector2[]   _touchIDPos          = new Vector2[10];
-    private Vector3     _tempCameraPos       = new Vector3();    //Нужен для сохранения последней позиции камеры, от которой позже будет отклонение.
-    private Vector3     _tempDirectionRay    = new Vector3();    //Нужен для сохранения последней позиции камеры, от которой позже будет отклонение.
+    private Vector3     _tempCameraPos       = new Vector3();    //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
+    private Vector3     _tempDirectionRay    = new Vector3();    //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
     private Vector3     _distance;
     /*========================================================================================================================*/
     #endregion
@@ -246,7 +246,7 @@ public sealed class CamMove_v2 : MonoBehaviour
                         NewObject.transform.rotation.z);
                 }
             }
-            //Debug.Log("Спавним объект " + Input.touches[0].fingerId);
+            //Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ " + Input.touches[0].fingerId);
         }
     }
     private bool    RunCheckFingerOnUI      (){
@@ -255,7 +255,7 @@ public sealed class CamMove_v2 : MonoBehaviour
         {
             if (EventSystem.current.IsPointerOverGameObject(Input.touches[0].fingerId))
             {
-                //Debug.Log("Палец задел UI");
+                //Debug.Log("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ UI");
                 CameraMode = SettedMode.Awaiting;
                 isUItouched = true;
                 return true;
@@ -272,7 +272,7 @@ public sealed class CamMove_v2 : MonoBehaviour
             if (Physics.Raycast(posToTransform, out output, Mathf.Infinity, layersToIgnore)){
                 Vector3 outputPoint = output.point + output.normal * 5;
                 Rigidbody rigBod    = selected.GetComponent<Rigidbody>();
-                rigBod.velocity     = ((selected.transform.position - outputPoint) * 5) * -1;
+                rigBod.linearVelocity     = ((selected.transform.position - outputPoint) * 5) * -1;
                 CheckObjectToNavMesh(selected);
             }
         }

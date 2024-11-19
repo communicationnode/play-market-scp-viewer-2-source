@@ -1,9 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary> 
+/// ќбработчик действий. »сполн€ет все поступившие в него <see href="System.Action"/> через главный поток Unity,
+/// позвол€€ учитывать асинхронным операци€м <see href="Unity Context Synchronization"/> 
+/// </summary>
 [DisallowMultipleComponent, AddComponentMenu("Start Tools/Main Thread Handler")]
 public sealed class MainThreadHandler : MonoBehaviour
 {
+    
     public static event System.Action onAddedAction = () => { };
     public static event System.Action onAddedOtherAction = () => { };
 

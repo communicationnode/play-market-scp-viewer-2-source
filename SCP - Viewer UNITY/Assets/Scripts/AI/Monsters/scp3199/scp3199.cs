@@ -67,7 +67,7 @@ public sealed class scp3199 : MonoBehaviour, IAliveForm, IPassportData, ISCPSkil
             murderConfigs.components.animator.Play("scp3199armature|Attack");
             murderConfigs.walking = 0;
             murderConfigs.components.navMeshAgent.velocity = Vector3.zero;
-            rigidBody.velocity = Vector3.zero;
+            rigidBody.linearVelocity = Vector3.zero;
             if (nearestMen.DClassConfigs.properties.health < 40)
             {
                 GameObject burned = Instantiate(burnedPrefab, nearestMen.gameObject.transform.position, nearestMen.gameObject.transform.rotation);
@@ -103,7 +103,7 @@ public sealed class scp3199 : MonoBehaviour, IAliveForm, IPassportData, ISCPSkil
         {
             yield return new WaitForSeconds(0.2f);
             GameObject egg = Instantiate(eggPrefab, transform.position + new Vector3(0, heigh, 0), transform.rotation);
-            egg.GetComponent<Rigidbody>().velocity = new Vector3(Random.Range(0f, 6f), Random.Range(0f, 6f), Random.Range(0f, 6f));
+            egg.GetComponent<Rigidbody>().linearVelocity = new Vector3(Random.Range(0f, 6f), Random.Range(0f, 6f), Random.Range(0f, 6f));
         }
     }
 }

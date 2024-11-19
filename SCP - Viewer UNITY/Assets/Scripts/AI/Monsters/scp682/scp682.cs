@@ -104,11 +104,11 @@ public sealed class scp682 : MonoBehaviour, IAliveForm, IPassportData, ISCPSkill
 
             if (men)
             {
-                _rigidBody.velocity = (transform.position - men.transform.position).normalized*-12 + (new Vector3(0,18,0)); 
+                _rigidBody.linearVelocity = (transform.position - men.transform.position).normalized*-12 + (new Vector3(0,18,0)); 
             }
             else
             {
-                _rigidBody.velocity = (transform.forward * 15) + new Vector3(0, 18, 0);
+                _rigidBody.linearVelocity = (transform.forward * 15) + new Vector3(0, 18, 0);
             }
         };
         skills[1].isUsedSkill += () => {

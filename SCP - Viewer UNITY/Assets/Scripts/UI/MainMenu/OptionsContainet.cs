@@ -37,7 +37,7 @@ public class OptionsContainet : MonoBehaviour
     {
         SavedGraphicsData.FirstProgrammLoading();
         SetLanguage(0);
-        IfEnabledCameraShaking.ifEnabledStatic.CheckBlurOptions();
+        /*IfEnabledCameraShaking.ifEnabledStatic.CheckBlurOptions();*/
 
         await System.Threading.Tasks.Task.Delay(16);
 
@@ -60,12 +60,12 @@ public class OptionsContainet : MonoBehaviour
     public void EnableBlur                  ()
     {
         PlayerPrefs.SetInt(PlayerPrefsKeys.OPTIONS_MOTION_BLUR, 1);
-        IfEnabledCameraShaking.ifEnabledStatic.CheckBlurOptions();
+        /*IfEnabledCameraShaking.ifEnabledStatic.CheckBlurOptions();*/
     }
     public void DisableBlur                 ()
     {
         PlayerPrefs.SetInt(PlayerPrefsKeys.OPTIONS_MOTION_BLUR, 0);
-        IfEnabledCameraShaking.ifEnabledStatic.CheckBlurOptions();
+        /*IfEnabledCameraShaking.ifEnabledStatic.CheckBlurOptions();*/
     }
     public void ChangeDynamicDetails        (bool rechange)
     {

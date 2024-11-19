@@ -5,18 +5,18 @@ public sealed class OptionsWindow_v2 : MonoBehaviour
     public void TextureQualitySet           (int quality)
     {
         PlayerPrefs.SetInt(PlayerPrefsKeys.OPTIONS_TEXTURE_QUALITY, quality);
-        QualitySettings.masterTextureLimit = PlayerPrefs.GetInt(PlayerPrefsKeys.OPTIONS_TEXTURE_QUALITY);
+        QualitySettings.globalTextureMipmapLimit = PlayerPrefs.GetInt(PlayerPrefsKeys.OPTIONS_TEXTURE_QUALITY);
     }
     public void DPIQualitySet               (int quality)
     {
         PlayerPrefs.SetInt(PlayerPrefsKeys.OPTIONS_DPI, quality);
         QualitySettings.resolutionScalingFixedDPIFactor = PlayerPrefs.GetInt(PlayerPrefsKeys.OPTIONS_DPI);
     }
-    public void BlurQualitySet              (int quality)
+    /*public void BlurQualitySet(int quality)
     {
         PlayerPrefs.SetInt(PlayerPrefsKeys.OPTIONS_MOTION_BLUR, quality);
         IfEnabledCameraShaking.ifEnabledStatic.CheckBlurOptions();
-    }
+    }*/
     public void FpsSet(int value)
     {
         PlayerPrefs.SetInt(PlayerPrefsKeys.OPTIONS_FPS, value);
@@ -67,7 +67,7 @@ public sealed class OptionsWindow_v2 : MonoBehaviour
     {
         SavedGraphicsData.FirstProgrammLoading();
         LanguageSet(0);
-        IfEnabledCameraShaking.ifEnabledStatic.CheckBlurOptions();
+        /*IfEnabledCameraShaking.ifEnabledStatic.CheckBlurOptions();*/
     }
     #endregion
 
@@ -103,7 +103,7 @@ public sealed class OptionsWindow_v2 : MonoBehaviour
         PlayerPrefs.SetInt(PlayerPrefsKeys.OPTIONS_BLOOM,                   0);
         PlayerPrefs.SetInt(PlayerPrefsKeys.OPTIONS_CHROMATIC,               0);
 
-        QualitySettings.masterTextureLimit              = PlayerPrefs.GetInt(PlayerPrefsKeys.OPTIONS_TEXTURE_QUALITY);
+        QualitySettings.globalTextureMipmapLimit              = PlayerPrefs.GetInt(PlayerPrefsKeys.OPTIONS_TEXTURE_QUALITY);
         QualitySettings.resolutionScalingFixedDPIFactor = PlayerPrefs.GetInt(PlayerPrefsKeys.OPTIONS_DPI);
         //IfEnabledCameraShaking.ifEnabledStatic.CheckBlurOptions();
     }
@@ -117,7 +117,7 @@ public sealed class OptionsWindow_v2 : MonoBehaviour
         PlayerPrefs.SetInt(PlayerPrefsKeys.OPTIONS_BLOOM,               0);
         PlayerPrefs.SetInt(PlayerPrefsKeys.OPTIONS_CHROMATIC,           0);
 
-        QualitySettings.masterTextureLimit              = PlayerPrefs.GetInt(PlayerPrefsKeys.OPTIONS_TEXTURE_QUALITY);
+        QualitySettings.globalTextureMipmapLimit              = PlayerPrefs.GetInt(PlayerPrefsKeys.OPTIONS_TEXTURE_QUALITY);
         QualitySettings.resolutionScalingFixedDPIFactor = PlayerPrefs.GetInt(PlayerPrefsKeys.OPTIONS_DPI);
         //IfEnabledCameraShaking.ifEnabledStatic.CheckBlurOptions();
     }
@@ -131,7 +131,7 @@ public sealed class OptionsWindow_v2 : MonoBehaviour
         PlayerPrefs.SetInt(PlayerPrefsKeys.OPTIONS_BLOOM,               1);
         PlayerPrefs.SetInt(PlayerPrefsKeys.OPTIONS_CHROMATIC,           1);
 
-        QualitySettings.masterTextureLimit              = PlayerPrefs.GetInt(PlayerPrefsKeys.OPTIONS_TEXTURE_QUALITY);
+        QualitySettings.globalTextureMipmapLimit              = PlayerPrefs.GetInt(PlayerPrefsKeys.OPTIONS_TEXTURE_QUALITY);
         QualitySettings.resolutionScalingFixedDPIFactor = PlayerPrefs.GetInt(PlayerPrefsKeys.OPTIONS_DPI);
         //IfEnabledCameraShaking.ifEnabledStatic.CheckBlurOptions();
     }

@@ -112,7 +112,7 @@ public abstract class AliveForm : IAliveConfigs
     }
     #endregion
 
-    public                void    CheckDie                    (in GameObject _gameObject) 
+    public                  void    CheckDie                    (in GameObject _gameObject) 
     {
         if (properties.health > 0 || properties.invulnerable)
         {

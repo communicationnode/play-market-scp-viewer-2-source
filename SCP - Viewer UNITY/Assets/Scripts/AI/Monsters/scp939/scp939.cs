@@ -136,7 +136,7 @@ public class scp939 : MonoBehaviour, IAliveForm, IPassportData, ISCPSkillRequest
             else
             {
                 navMeshAgent.velocity = Vector3.zero;
-                rigidBody.velocity = Vector3.zero;
+                rigidBody.linearVelocity = Vector3.zero;
             }
         }
     }

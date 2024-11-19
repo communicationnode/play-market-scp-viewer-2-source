@@ -31,9 +31,9 @@ public sealed class PhysicsPropProperties : MonoBehaviour, IObjectParameters
         if (!checkGravity) return;
 
         if (!GetComponent(nameof(Rigidbody))) return;
-        if (System.Math.Abs(rigidBody.velocity.magnitude) * damageMultiptier < 1) return;
+        if (System.Math.Abs(rigidBody.linearVelocity.magnitude) * damageMultiptier < 1) return;
 
-        if(!properties.invulnerable) properties.health -= (short)(System.Math.Abs(rigidBody.velocity.magnitude)*damageMultiptier);
+        if(!properties.invulnerable) properties.health -= (short)(System.Math.Abs(rigidBody.linearVelocity.magnitude)*damageMultiptier);
         PlaySoundsOfBreak();
     }
     private void PlaySoundsOfBreak  ()  

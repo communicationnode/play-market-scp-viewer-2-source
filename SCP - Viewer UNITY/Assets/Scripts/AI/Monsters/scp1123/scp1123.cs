@@ -51,17 +51,17 @@ public class scp1123 : MonoBehaviour, IPassportData,ISCPSkillRequest
             dclass.  DClassConfigs.agressive = true;
             dclass.  bravery                 = 66;
             dclass.  ManType                 = Man.ManTypeEnum.AbsolutelyAgressive;
-            GetComponent<Rigidbody>().          velocity                = GetComponent<Rigidbody>().velocity + new Vector3(0, 15, 0);
+            GetComponent<Rigidbody>().          linearVelocity                = GetComponent<Rigidbody>().linearVelocity + new Vector3(0, 15, 0);
             GetComponent<Rigidbody>().          angularVelocity         = GetComponent<Rigidbody>().angularVelocity + new Vector3(15, 15, 15);
         }
     }
     public  void    SkillsSet   ()
     {
         skills[0].isUsedSkill += () => {
-            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity + new Vector3(0, 15, 0);
+            GetComponent<Rigidbody>().linearVelocity = GetComponent<Rigidbody>().linearVelocity + new Vector3(0, 15, 0);
         };
         skills[1].isUsedSkill += () => {
-            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity + new Vector3(0, 25, 0);
+            GetComponent<Rigidbody>().linearVelocity = GetComponent<Rigidbody>().linearVelocity + new Vector3(0, 25, 0);
         };
         skills[2].isUsedSkill += () => {
             skillParticles.Emit(118);

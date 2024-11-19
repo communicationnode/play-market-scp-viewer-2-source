@@ -31,14 +31,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40992364309467822}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 40992365399553091}
   - {fileID: 3177191434000783554}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &40992364309467819
 Rigidbody:
@@ -47,13 +48,24 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40992364309467822}
-  serializedVersion: 2
+  serializedVersion: 4
   m_Mass: 1
   m_Drag: 2
   m_AngularDrag: 47.28
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 2
 --- !u!136 &40992364309467818
@@ -64,8 +76,17 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40992364309467822}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 2
   m_Radius: 1.74
   m_Height: 8.42
   m_Direction: 1
@@ -127,24 +148,12 @@ MonoBehaviour:
     scaredTimer: 0
     agressive: 1
     bloodlust: 0
-    InventorySlots:
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    PointOfInterests: {x: 0, y: 0, z: 0}
+    interestPoint: {x: 0, y: 0, z: 0}
     monsterFinded: 0
     IncludedObjects:
       DeadRagdoll: {fileID: 5024215841415637096, guid: 0fdefb1636e4cd647b07fb1f5db74402,
         type: 3}
-      Drop: []
-      DropChance: 
+      drop: []
     properties:
       health: 9981
       armor: 21894
@@ -153,6 +162,12 @@ MonoBehaviour:
     components:
       animator: {fileID: 0}
       navMeshAgent: {fileID: 0}
+      skinnedMeshRenderer: {fileID: 0}
+    allObjectSearhHeigth: 7
+    allObjectSearchRadius: 65
+    allSpheredObjects: []
+    allRaycastedObjects: []
+  _people: {fileID: 0}
 --- !u!82 &6055136259924198724
 AudioSource:
   m_ObjectHideFlags: 0
@@ -164,6 +179,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 550790ef5da82f74691e065fb1861c43, type: 3}
+  m_Resource: {fileID: 8300000, guid: 550790ef5da82f74691e065fb1861c43, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -303,12 +319,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40992365399553090}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 165, y: 165, z: 165}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 40992364309467828}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &40992365399553101
 MeshFilter:
@@ -329,11 +346,15 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -364,6 +385,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 40992364309467828}
     m_Modifications:
     - target: {fileID: 1098036866360820712, guid: ec008745d459ad94f8730104bc4cd605,
@@ -427,6 +449,9 @@ PrefabInstance:
       value: obj_shadow
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec008745d459ad94f8730104bc4cd605, type: 3}
 --- !u!4 &3177191434000783554 stripped
 Transform:

@@ -47,7 +47,7 @@ public sealed class scp017 : MonoBehaviour, IPassportData
         try
         {
             transform.LookAt(target.transform, Vector3.up);
-            thisRigidbody.velocity = transform.forward * moveSpeed;
+            thisRigidbody.linearVelocity = transform.forward * moveSpeed;
             InteractiveMethods.FearByObject(transform.position, target.transform);
             if (target.TryGetComponent<Man>(out Man dclass))
             {

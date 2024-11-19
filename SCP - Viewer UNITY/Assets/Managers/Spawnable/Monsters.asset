@@ -39,6 +39,6 @@ MonoBehaviour:
   - {fileID: 3073811076573004430, guid: 99e9538aeca8ac34b81591ce064df52c, type: 3}
   - {fileID: 3073811076573004430, guid: 0b8ade407da924e4782702833595e71f, type: 3}
   - {fileID: 7125479436559871097, guid: 627aab877b54c9f4f8414bb7fff08d7e, type: 3}
-  - {fileID: 61533321161318527, guid: 0afff848ffcf42a49a24975afc1dc48e, type: 3}
   - {fileID: 3281425586735554459, guid: c4e36c21f54697341bdbca901be35f4c, type: 3}
+  - {fileID: 61533321161318527, guid: 0afff848ffcf42a49a24975afc1dc48e, type: 3}
   managerKey: monsters

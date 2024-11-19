@@ -3,7 +3,7 @@ public static class SavedGraphicsData
 {
     /// <summary> 
     /// ------------------------------------------------------------------------------- <br/>
-    /// Получить графические <see href="сохраненные"/> настройки <br/>
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ <see href="пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"/> пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ <br/>
     /// ------------------------------------------------------------------------------- <br/>
     /// </summary>
     public static void GetGraphics()
@@ -23,11 +23,11 @@ public static class SavedGraphicsData
 
         Application.targetFrameRate         = PlayerPrefs.GetInt(PlayerPrefsKeys.OPTIONS_FPS);
 
-        QualitySettings.masterTextureLimit  = PlayerPrefs.GetInt(PlayerPrefsKeys.OPTIONS_TEXTURE_QUALITY);
+        QualitySettings.globalTextureMipmapLimit  = PlayerPrefs.GetInt(PlayerPrefsKeys.OPTIONS_TEXTURE_QUALITY);
     }
     /// <summary> 
     /// ------------------------------------------------------------------------------- <br/>
-    /// Сброс настроек, либо, если игра запущена <see href="впервые"/>, запускается этот метод. <br/>
+    /// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ <see href="пїЅпїЅпїЅпїЅпїЅпїЅпїЅ"/>, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ. <br/>
     /// ------------------------------------------------------------------------------- <br/>
     /// </summary>
     public static void FirstProgrammLoading()

@@ -4,27 +4,28 @@ using System.Collections;
 using System.Runtime.InteropServices;
 
 /// Created by UROD Engine
-/// Образ человека и его поведения.
+/// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
 ///------------------------------------------------------------------------------------------------------------------------------------
-/// Version 2.0 - Переделано с нуля.
+/// Version 2.0 - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ.
 ///------------------------------------------------------------------------------------------------------------------------------------
-/// Имеет возможность использовать 3+ типа оружия (Пистолет, Дробовик, Винтовка и т.д.)
-/// Умеет бояться и драться в ближнем бою                                    
-/// Научился более адекватно избегать монстров                               
-/// Храбрость выбирается случайно и в зависимости от вида специальности      
-/// Научился подбирать оружие с земли <TakeWeapon>. Поиск оружия ведет метод 
-/// Если при подборе пушки у человека нету патронов - ему выдаются патроны   
+/// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 3+ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅ.пїЅ.)
+/// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ                                    
+/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ                               
+/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ      
+/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ <TakeWeapon>. пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ 
+/// пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ   
 ///------------------------------------------------------------------------------------------------------------------------------------
-/// 16.05.2022 update - параметры гендера удалены.   они перемещены к scp - 113.
-/// 16.05.2022 update - зомби префабы удалены.       они перемещены к scp - 049.
-/// 16.05.2022 update - рефакторинг интерфейсов для взаимодействий AliveForm классов
+/// 16.05.2022 update - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ.   пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ scp - 113.
+/// 16.05.2022 update - пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ.       пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ scp - 049.
+/// 16.05.2022 update - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ AliveForm пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 /// 
-/// 14.03.2023 update - мышление людей происходит не одновременно, а чередуемо через <see cref="MainThreadHandler"/>
+/// 14.03.2023 update - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ <see cref="MainThreadHandler"/>
 /// 
-/// 25.05.2023 update - поля гендерных мешей возвращены обратно.
-/// 25.05.2023 update - поле зомби префабан возвращено обратно.
-/// 25.05.2023 update - добавлены поля дополнительных анимаций
-/// 25.05.2023 update - переработка полей
+/// 25.05.2023 update - пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
+/// 25.05.2023 update - пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
+/// 25.05.2023 update - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+/// 25.05.2023 update - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+/// 18.11.2024 commit - wtf with this commentary happen?????
 
 
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -39,11 +40,11 @@ public sealed class Man : MonoBehaviour, IAliveForm, IPassportData, ISCPSkillReq
     public short            patrons;
     public short            damage;    
     
-    /// <summary> храбрость, если значение меньше, чем у <see cref="braveryCheck"/> - человек убежит. При высокой храбрости человек будет драться </summary>
+    /// <summary> пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅ <see cref="braveryCheck"/> - пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ </summary>
     [Range(25,byte.MaxValue)]   public  byte bravery;
                                 private byte braveryCheck = 45;
 
-    /// <summary> будет ли человек стрелять, даже если монстр уже рядом.  </summary>
+    /// <summary> пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.  </summary>
     public bool             shootIfIsScared;    
 
     public  bool            enemyIsNear;
@@ -68,21 +69,21 @@ public sealed class Man : MonoBehaviour, IAliveForm, IPassportData, ISCPSkillReq
     [Header("AudioClips:")]
     public ClipsList        clipList;
 
-    ///<summary> Здесь закрепляется шапка на голове человека. Это кость в скелете модели человека </summary>
+    ///<summary> пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ </summary>
     [Header("Slots:")]
     public GameObject       HatSlot;
-    ///<summary> Здесь закрепляется оружие на руке человека. Это кость в скелете модели человека </summary>
+    ///<summary> пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ </summary>
     public GameObject       HandWeaponSlot;
-    ///<summary> Здесь закрепляется оружие на спине человека. Это кость в скелете модели человека </summary>
+    ///<summary> пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ </summary>
     public GameObject       Spina;
-    ///<summary>Префаб оружия.</summary>
+    ///<summary>пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.</summary>
     public GameObject       Weapon;
 
     public string           aliveName           { get; set; }
     public string           aliveSurname        { get; set; }
     public short            aliveAges           { get; set; }
     public float            heigh               { get => 7; }
-    private float           _distanceToScared   { get; set; }   //Дистанция, на которой идет проверка храбрости
+    private float           _distanceToScared   { get; set; }   //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
     [HideInInspector] public Rigidbody        rigidBody;
     [HideInInspector] public NavMeshAgent     navMeshAgent;
@@ -93,15 +94,17 @@ public sealed class Man : MonoBehaviour, IAliveForm, IPassportData, ISCPSkillReq
         new SCPSkillNode("Say", 500)
     };
 
-
+    /// <summary> РўСЂРµР±СѓРµС‚СЃСЏ РґР»СЏ РїРѕРѕС‡РµСЂРµРґРЅРѕРіРѕ РёСЃРїРѕР»РЅРµРЅРёСЏ С‚СЏР¶РµР»С‹С… РѕРїРµСЂР°С†РёР№.</summary>
+    private static System.Collections.Generic.Queue<GameObject> mansQueue = new System.Collections.Generic.Queue<GameObject>();
     /*=========================================================================================================================================================*/
     #endregion
 
     private     void        Awake               ()
     {
+        mansQueue.Enqueue(this.gameObject);
+
         rigidBody       = this.GetComponent<Rigidbody>();
         navMeshAgent    = this.GetComponent<NavMeshAgent>();
-
 
         DClassConfigs.components.skinnedMeshRenderer.sharedMesh = Random.Range(0, 100) > 50 ? genderMeshes.male : genderMeshes.female ?? genderMeshes.male;
 
@@ -193,9 +196,25 @@ public sealed class Man : MonoBehaviour, IAliveForm, IPassportData, ISCPSkillReq
         WalkingAnimationUtility.Animate(DClassConfigs.components.animator, navMeshAgent, rigidBody, 2, 0.015f, 5, 0.4f);
         dialogTimer = dialogTimer > (ushort)0 ? (ushort)(dialogTimer - 1) : dialogTimer;
 
-        MainThreadHandler.AddActions(DClassConfigs.CirclingHeart);
-        DClassConfigs.CheckDie(DClassConfigs.IncludedObjects.parentGameObject);
+        try
+        {
+            if (mansQueue.Peek() == this.gameObject)
+            {
+                mansQueue.Dequeue();
+                DClassConfigs.CirclingHeart();
+                mansQueue.Enqueue(this.gameObject);
+            }
+            else if (mansQueue.Peek() == null)
+            {
+                mansQueue.Dequeue();
+            }
+        }
+        catch
+        {
+            mansQueue.Dequeue();
+        }
 
+        DClassConfigs.CheckDie(DClassConfigs.IncludedObjects.parentGameObject);
 
         HandleProps();
 
@@ -310,9 +329,9 @@ public sealed class Man : MonoBehaviour, IAliveForm, IPassportData, ISCPSkillReq
     }
     /// <summary>
     /// --------------------------------------------------------------------------------------------------------------<br/>
-    /// Если уже есть оружие, то взять при спавне. Этот метод работает, даже если оружие берется позже с пола. <br/>
+    /// пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ. <br/>
     /// --------------------------------------------------------------------------------------------------------------<br/>
-    /// Под капотом выполняется <see cref="PropWeaponType.FindPatrons(in PropWeaponType.WhatWeaponType)"/> - Если патронов в кармане нету, найти патроны в найденной пушке <br/>
+    /// пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ <see cref="PropWeaponType.FindPatrons(in PropWeaponType.WhatWeaponType)"/> - пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ <br/>
     /// --------------------------------------------------------------------------------------------------------------<br/>
     /// </summary>
     private     void        TakeGunFinally      ()
@@ -378,7 +397,7 @@ public sealed class Man : MonoBehaviour, IAliveForm, IPassportData, ISCPSkillReq
         }
             
 
-    }   //+BraveryMethods [Проверяет на смелость + есть ли в руках пушка]
+    }   //+BraveryMethods [пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ + пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ]
     private     void        SearchNearestDoor   ()
     {
         if (navMeshAgent.isOnNavMesh is false || navMeshAgent.enabled is false)
@@ -402,7 +421,7 @@ public sealed class Man : MonoBehaviour, IAliveForm, IPassportData, ISCPSkillReq
         if (shootIfIsScared is true) _distanceToScared = 0;
         else _distanceToScared = 12.5f;
 
-        if (Weapon != null && patrons > 0 && Vector3.Distance(transform.position, monsterTarget.transform.position) > _distanceToScared) // Если есть пушка в руках и есть патроны - пытаться стрелять в монстра
+        if (Weapon != null && patrons > 0 && Vector3.Distance(transform.position, monsterTarget.transform.position) > _distanceToScared) // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         {
             if (navMeshAgent.enabled && navMeshAgent.isOnNavMesh) navMeshAgent.SetDestination(transform.position);
             Vector3 looktomonster = new Vector3(monsterTarget.transform.position.x, transform.position.y, monsterTarget.transform.position.z);
@@ -414,8 +433,8 @@ public sealed class Man : MonoBehaviour, IAliveForm, IPassportData, ISCPSkillReq
         {
             RunOrPunch(monsterTarget);
         }
-        else if (patrons <= 0) RunOrPunch(monsterTarget); // Если патронов нету - убегать или драться.
-    }   //+ShootRequiring [Проверяет, что за оружие в руках]
+        else if (patrons <= 0) RunOrPunch(monsterTarget); // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
+    }   //+ShootRequiring [пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ]
     public      void        ShootRequiring      (in GameObject monsterTarget)
     {
         if (monsterTarget is null || (monsterTarget != null && monsterTarget == this.gameObject))
@@ -449,7 +468,7 @@ public sealed class Man : MonoBehaviour, IAliveForm, IPassportData, ISCPSkillReq
         if (monsterTarget is null) return;
         if (navMeshAgent.isOnNavMesh is false || navMeshAgent.enabled is false) return;
 
-        monsterTarget.TryGetComponent<IAliveForm>(out IAliveForm componenter);    //Ищем чела, у которого есть образ AliveForm
+        monsterTarget.TryGetComponent<IAliveForm>(out IAliveForm componenter);    //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ AliveForm
         AliveForm targetConfigs;
         new AliveFormFieldGetter(componenter, out targetConfigs);
       
@@ -507,7 +526,7 @@ public sealed class Man : MonoBehaviour, IAliveForm, IPassportData, ISCPSkillReq
     public      void        RunningAnimation    () => DClassConfigs.components.animator.SetBool("ifRunning", navMeshAgent.speed > 20 ? true : false);
 
     
-    public          IAliveConfigs   GetField        () => DClassConfigs; // Это поле - класс, реализующий интерфейс IAliveDamageConfigs
+    public          IAliveConfigs   GetField        () => DClassConfigs; // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ IAliveDamageConfigs
     public          void            SkillsSet       ()
     {
         skills[0].isUsedSkill += () => {
@@ -567,7 +586,7 @@ public readonly struct WalkingAnimationUtility
 {
     private static void AnimateWalk  (in Animator animator, in int layerSource, in Rigidbody rigidBody, in float valueToStop, in float speedMultiplier, in float lerpSpeed)
     {
-        float firstAdaptaionOfSpeed = Mathf.Clamp(rigidBody.velocity.magnitude, 0, 10);
+        float firstAdaptaionOfSpeed = Mathf.Clamp(rigidBody.linearVelocity.magnitude, 0, 10);
         float normalizedValue       = (firstAdaptaionOfSpeed - 0) / (10 - 0);
 
         if (normalizedValue > valueToStop)
@@ -587,19 +606,19 @@ public readonly struct WalkingAnimationUtility
     }
     /// <summary>
     /// ----------------------------------------------------------------------------------------------------<br/>
-    /// Анимирует существу передвижение, опираясь на <see cref="NavMeshAgent"/> и <see cref="Rigidbody"/> состояния. <br/>
-    /// По сути в <see cref="Animator"/>, в зависимости от скорости существа, у слоя изменяется значение <see langword="weight"/><br/>
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ <see cref="NavMeshAgent"/> пїЅ <see cref="Rigidbody"/> пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. <br/>
+    /// пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ <see cref="Animator"/>, пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ <see langword="weight"/><br/>
     /// ----------------------------------------------------------------------------------------------------<br/>
-    /// В качестве входных параметров использует: <br/>
-    /// <see langword="layerSource"/>       - ID слоя компонента <see cref="Animator"/>, в котором находится зацикленная анимация ходьбы<br/>
-    /// <see langword="valueToStop"/>       - значение минимальной скорости существа, достижение которой приведет к отлючению слоя анимации ходьбы<br/>
-    /// <see langword="speedMultiplier"/>   - множитель параметра <see langword="valueToStop"/> <br/>
-    /// <see langword="lerpSpeed"/>         - скорость появления и исчезновения анимации ходьбы<br/>
+    /// пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: <br/>
+    /// <see langword="layerSource"/>       - ID пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ <see cref="Animator"/>, пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ<br/>
+    /// <see langword="valueToStop"/>       - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ<br/>
+    /// <see langword="speedMultiplier"/>   - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ <see langword="valueToStop"/> <br/>
+    /// <see langword="lerpSpeed"/>         - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ<br/>
     /// ----------------------------------------------------------------------------------------------------<br/>
-    /// Под капотом используются static void методы: <br/>
-    /// 1) Если у существа активен компонент <see cref="NavMeshAgent"/>:<br/>
+    /// пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ static void пїЅпїЅпїЅпїЅпїЅпїЅ: <br/>
+    /// 1) пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ <see cref="NavMeshAgent"/>:<br/>
     /// __<see cref="AnimateWalk(in Animator, in int, in NavMeshAgent, in float, in float, in float)"/><br/>
-    /// 2) Если у существа не активен компонент <see cref="NavMeshAgent"/>:<br/>
+    /// 2) пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ <see cref="NavMeshAgent"/>:<br/>
     /// __<see cref="AnimateWalk(in Animator, in int, in Rigidbody, in float, in float, in float)"/><br/>
     /// </summary>
     public static void Animate      (in Animator animator, in NavMeshAgent navMesh, in Rigidbody rigidBody, in int layerSource, in float valueToStop, in float speedMultiplier, in float lerpSpeed)

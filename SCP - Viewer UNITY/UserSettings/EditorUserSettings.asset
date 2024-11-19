@@ -5,35 +5,68 @@ EditorUserSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 4
   m_ConfigSettings:
+    GraphicsSettingsInspector_UserSettings:
+      value: 18134705175a055722080a3115371d4a0d55006876786860616b0471b8b07a68ffab74f9ee2a3a30300cea1a11320d0beb1a0c25f7060f494b4cdf1b18f3045e38cb5ad8
+      flags: 0
+    RecentlyUsedSceneGuid-0:
+      value: 06050d530304590c0b0b557a427a0b44144f4f7e757177677c2c4435b4b46c6c
+      flags: 0
+    RecentlyUsedSceneGuid-1:
+      value: 540505535d530d0b095f54734377064410161b79797f7f367c781b30b4b7603c
+      flags: 0
+    RecentlyUsedSceneGuid-2:
+      value: 5505520051510a085d0d597612710944104f49722e2c2465282c4b36b6b8326f
+      flags: 0
+    RecentlyUsedSceneGuid-3:
+      value: 5a5004035300585d090c0e7549260c444115417f7d7d20657f794a61e0e26d6f
+      flags: 0
+    RecentlyUsedSceneGuid-4:
+      value: 55550d5403575b0e55575b7313700c4415151a7b7b7124657c284535bbb26c68
+      flags: 0
+    RecentlyUsedSceneGuid-5:
+      value: 51010104060c585d58560d7711745e4447151d287f7f72687d2d4435e6b7363e
+      flags: 0
+    RecentlyUsedSceneGuid-6:
+      value: 5a5452055c510f09555c547646775c441715487c297f73337e2b4c6ab0e3673a
+      flags: 0
+    RecentlyUsedSceneGuid-7:
+      value: 010305075c075a0b545d557b48705c44444f417f7f2b25667e7a4966e4b13539
+      flags: 0
+    RecentlyUsedSceneGuid-8:
+      value: 5450060051050c080c5f5b73437b5e44454e4e7d7e7a2068752b1935e0e4303a
+      flags: 0
+    RecentlyUsedSceneGuid-9:
+      value: 51570c0056010c0f0b085d7547730e44151648732a2973607d701e30e1b6616e
+      flags: 0
     RecentlyUsedScenePath-0:
-      value: 22424703114646680e0b0227036c6d3f393a2b651f0b16067c691032f2ae2136ebf32f
-      flags: 0
-    RecentlyUsedScenePath-1:
-      value: 22424703114646680e0b0227036c6d3f393a2b651f0b16617d7f2224edf2383cacf238e0f323
-      flags: 0
-    RecentlyUsedScenePath-2:
-      value: 22424703114646680e0b0227036c7b3520282b090906037e38271427fb
-      flags: 0
-    RecentlyUsedScenePath-3:
-      value: 22424703114646680e0b0227036c6c0417050c1f3c66333e243d04
-      flags: 0
-    RecentlyUsedScenePath-4:
-      value: 22424703114646680e0b0227036c6d3f393a2b651f0b16607d7b5326ece92021
-      flags: 0
-    RecentlyUsedScenePath-5:
-      value: 22424703114646680e0b0227036c6d3f393a2b651e2d221c2c22187df7ee3d2cfb
-      flags: 0
-    RecentlyUsedScenePath-6:
-      value: 22424703114646680e0b0227036c74150f34193828682135232c0f32f6ef2676f7e93ffdfe
-      flags: 0
-    RecentlyUsedScenePath-7:
       value: 22424703114646680e0b0227036c78111b1208262d3168252320092a
       flags: 0
-    RecentlyUsedScenePath-8:
+    RecentlyUsedScenePath-1:
+      value: 22424703114646680e0b0227036c74150f34193828682135232c0f32f6ef2676f7e93ffdfe
+      flags: 0
+    RecentlyUsedScenePath-2:
       value: 22424703114646680e0b0227036c72111f19352f223d68252320092a
       flags: 0
-    RecentlyUsedScenePath-9:
+    RecentlyUsedScenePath-3:
       value: 22424703114646680e0b0227036c6d3f393a2b650f272b20212c0562acf53a31f6fe
+      flags: 0
+    RecentlyUsedScenePath-4:
+      value: 22424703114646680e0b0227036c6d3f393a2b651e2d221c2c22187df7ee3d2cfb
+      flags: 0
+    RecentlyUsedScenePath-5:
+      value: 22424703114646680e0b0227036c6d3f393a2b651f0b16607d7b5326ece92021
+      flags: 0
+    RecentlyUsedScenePath-6:
+      value: 22424703114646680e0b0227036c6d3f393a2b651f0b16617d7f2224edf2383cacf238e0f323
+      flags: 0
+    RecentlyUsedScenePath-7:
+      value: 22424703114646680e0b0227036c6d3f393a2b651f0b16627d785326ece92021
+      flags: 0
+    RecentlyUsedScenePath-8:
+      value: 22424703114646680e0b0227036c6d3f393a2b651f0b16067c691032f2ae2136ebf32f
+      flags: 0
+    RecentlyUsedScenePath-9:
+      value: 22424703114646680e0b0227036c6c0417050c1f3c66333e243d04
       flags: 0
     UnityRemoteDevice:
       value: 225f4d46245b0d4902070862342649191512
@@ -46,9 +79,15 @@ EditorUserSettings:
   m_VCDebugCmd: 0
   m_VCDebugOut: 0
   m_SemanticMergeMode: 2
+  m_DesiredImportWorkerCount: 1
+  m_StandbyImportWorkerCount: 1
+  m_IdleImportWorkerShutdownDelay: 60000
   m_VCShowFailedCheckout: 1
   m_VCOverwriteFailedCheckoutAssets: 1
   m_VCProjectOverlayIcons: 1
   m_VCHierarchyOverlayIcons: 1
   m_VCOtherOverlayIcons: 1
   m_VCAllowAsyncUpdate: 1
+  m_VCScanLocalPackagesOnConnect: 1
+  m_ArtifactGarbageCollection: 1
+  m_CompressAssetsOnImport: 1
