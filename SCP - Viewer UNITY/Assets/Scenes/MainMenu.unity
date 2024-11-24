@@ -39381,7 +39381,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 920.9, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1772197823
 MonoBehaviour:
@@ -39402,6 +39402,12 @@ MonoBehaviour:
   - MapName: East  Containment Cell
     MapFileName: Complex1
     MapIcon: {fileID: 21300000, guid: b87ae799da3f3b64f841ba7daa23f426, type: 3}
+  - MapName: Main entrance
+    MapFileName: Complex
+    MapIcon: {fileID: 21300000, guid: 8ec7ee29cdd13484a88d0c23c62a35b6, type: 3}
+  - MapName: City
+    MapFileName: Empty_city
+    MapIcon: {fileID: 21300000, guid: 90558d52046ce87478dc28560948e75c, type: 3}
   SCRIPT_ref: {fileID: 1133147064}
   buttonPrefab: {fileID: 489191131}
   DistanceMultiplier: 1.23
@@ -39426,9 +39432,9 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 280.69, y: 220.4}
-  m_Spacing: {x: 288.3, y: 0}
-  m_Constraint: 0
-  m_ConstraintCount: 2
+  m_Spacing: {x: 179.81, y: 0}
+  m_Constraint: 2
+  m_ConstraintCount: 1
 --- !u!1 &1777092686
 GameObject:
   m_ObjectHideFlags: 0
