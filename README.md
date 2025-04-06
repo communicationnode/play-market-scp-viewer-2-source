@@ -1,4 +1,10 @@
 # scp-viewer-2-source
+
+![Static Badge](https://img.shields.io/badge/communicationnode-communicationnode)
+![GitHub top language](https://img.shields.io/github/languages/top/communicationnode/play-market-scp-viewer-2-source)
+![GitHub](https://img.shields.io/github/license/communicationnode/play-market-scp-viewer-2-source)
+![GitHub Repo stars](https://img.shields.io/github/stars/communicationnode/play-market-scp-viewer-2-source)
+
 :zap::zap::zap:```This code is crap, open at your own risk.```:zap::zap::zap:
 
 -------------------------------------
